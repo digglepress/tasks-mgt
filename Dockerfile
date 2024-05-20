@@ -3,6 +3,7 @@ FROM node:18-alpine AS builder
 ARG GOOGLE_ID=""
 ARG GOOGLE_SECRET=""
 ARG DATABASE_URL=""
+ARG NEXTAUTH_SECRET=""
 
 WORKDIR /app
 COPY ./prisma ./prisma

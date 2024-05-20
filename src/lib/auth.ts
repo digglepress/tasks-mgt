@@ -5,6 +5,10 @@ import { prismaDB } from "@/providers/connection";
 
 export const authOptions: any = {
   adapter: PrismaAdapter(prismaDB),
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/",
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
