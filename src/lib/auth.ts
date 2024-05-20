@@ -5,7 +5,7 @@ import { prismaDB } from "@/providers/connection";
 
 export const authOptions: any = {
   adapter: PrismaAdapter(prismaDB),
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET as string,
   pages: {
     signIn: "/",
   },
