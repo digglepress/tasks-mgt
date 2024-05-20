@@ -5,8 +5,10 @@ ARG GOOGLE_SECRET=""
 ARG DATABASE_URL=""
 
 WORKDIR /app
+COPY ./prisma ./prisma
 COPY package.json package.json
 RUN yarn install
+RUN npx prisma generate
 COPY . .
 RUN yarn build && yarn --production
 
