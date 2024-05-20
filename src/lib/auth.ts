@@ -3,11 +3,9 @@ import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prismaDB } from "@/providers/connection";
 
-console.log(process.env.NEXTAUTH_SECRET)
 export const authOptions: any = {
   adapter: PrismaAdapter(prismaDB),
-  secret: "jox6Xssuzetgb7j8ktYB8iancBRSzpK58vccvJZRMxZWQcAzmljySRCzUUXqyFRRqn93EIZYjW5jUpgziuHJD5SIsEahBNqD0iDe",
-  // secret: process.env.NEXTAUTH_SECRET as string,
+  secret: process.env.NEXTAUTH_SECRET as string,
   pages: {
     signIn: "/",
   },
